@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Usage Tracker",
+  "version": "1.0",
+  "description": "Track your Instagram usage and get notified when time limit is reached.",
+  "permissions": ["tabs", "storage", "notifications", "alarms"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.instagram.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
+  }
+}
